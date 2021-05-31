@@ -84,7 +84,7 @@ class RockPaperScissors {
 
             compare(userSelection, cpuSelection)
     }
-
+  }
   /**
    * 
    * @param {string} userSelection user selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
@@ -100,4 +100,5 @@ class RockPaperScissors {
 
     }
 
+  
 }

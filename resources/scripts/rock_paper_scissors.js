@@ -15,6 +15,12 @@ class RockPaperScissors {
   generateCPUResponse(){
     const acceptedValues = [ `rock`, `paper`, `scissors` ];
 
+      function getRandomInt(max) {
+          return Math.floor(Math.random() * Math.floor(max));
+      }
+
+      console.log(getRandomInt(3));
+        // expected output: 0, 1 or 2
     return ;
   }
   /**
@@ -32,16 +38,39 @@ class RockPaperScissors {
    * @param {string} userSelection user selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    * @param {string} cpuSelection computer selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
-  determineWinner(userSelection, cpuSelection){
-
+    determineWinner(userSelection, cpuSelection)
+    {
+        if (userSelection === cpuSelection)
+        {
+            return 'tie';
+        }
+        elseif ((userSelection === 'paper' && cpuSelection === 'rock') || 
+        (userSelection === 'scissors' && cpuSelection === 'paper') ||
+        (userSelection === 'rock' && cpuSelection === 'scissors'))
+        {
+            return 'win';
+        }
+        elseif ((cpuSelection === 'paper' && userSelection === 'rock') ||
+        (cpuSelection === 'scissors' && userSelection === 'paper') ||
+        (cpuSelection === 'rock' && userSelection === 'scissors'))
+        {
+            return 'lose';
+        } 
   }
-
   /**
    * 
    * @param {string} userSelection user selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
-  play(userSelection){
+     play(userSelection)
+    {
+      this.score =
+      {
+       user: NEW_SCORE,
+       cpu: NEW_SCORE
+       }
+      this.gameHistoryLog.push(`You selected Scissors, CPU selected Paper: You wins wins`);
 
-  }
+    }
 
+  
 }

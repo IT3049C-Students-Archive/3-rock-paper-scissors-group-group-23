@@ -40,50 +40,22 @@ class RockPaperScissors {
    */
     determineWinner(userSelection, cpuSelection)
     {
-        function playFunction() {
-
-            var cpuSelection = Math.random();
-            if (cpuSelection < 0.34) {
-                cpuSelection = "rock";
-            } else if (cpuSelection <= 0.67) {
-                cpuSelection = "paper";
-            } else {
-                cpuSelection = "scissors";
-            }
-
-            var compare = function (choice1, choice2) {
-                if (choice1 === choice2) {
-                    alert("The result is a tie!");
-                }
-                if (choice1 === "rock") {
-                    if (choice2 === "scissors") {
-                        alert("rock wins");
-                    } else {
-                        alert("paper wins");
-                    }
-                }
-                if (choice1 === "paper") {
-                    if (choice2 === "rock") {
-                        alert("paper wins");
-                    } else {
-                        if (choice2 === "scissors") {
-                            alert("scissors wins");
-                        }
-                    }
-                    if (choice1 === "scissors") {
-                        if (choice2 === "rock") {
-                            alert("rock wins");
-                        } else {
-                            if (choice2 === "paper") {
-                                alert("scissors wins");
-                            }
-                        }
-                    }
-                }
-            };
-
-            compare(userSelection, cpuSelection)
-    }
+        if (userSelection === cpuSelection)
+        {
+            return 'tie';
+        }
+        elseif ((userSelection === 'paper' && cpuSelection === 'rock') || 
+        (userSelection === 'scissors' && cpuSelection === 'paper') ||
+        (userSelection === 'rock' && cpuSelection === 'scissors'))
+        {
+            return 'win';
+        }
+        elseif ((cpuSelection === 'paper' && userSelection === 'rock') ||
+        (cpuSelection === 'scissors' && userSelection === 'paper') ||
+        (cpuSelection === 'rock' && userSelection === 'scissors'))
+        {
+            return 'lose';
+        } 
   }
   /**
    * 
